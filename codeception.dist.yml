@@ -1,0 +1,39 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+    support: tests/_support
+    envs: tests/_envs
+actor: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+    commands:
+        - Codeception\Command\GenerateWPUnit
+        - Codeception\Command\GenerateWPRestApi
+        - Codeception\Command\GenerateWPRestController
+        - Codeception\Command\GenerateWPRestPostTypeController
+        - Codeception\Command\GenerateWPAjax
+        - Codeception\Command\GenerateWPCanonical
+        - Codeception\Command\GenerateWPXMLRPC
+params:
+    - tests/_envs/.env.testing
+bootstrap: _bootstrap.php
+settings:
+  lint: true
+  colors: true
+  memory_limit: 1024M
+coverage:
+  enabled: true
+  show_uncovered: true
+  show_only_summary: true
+  include:
+    - src/E20R/Utilities/*.php
+    - src/E20R/Licensing/*.php
+    - ./class-loader.php
+  exclude:
+    - src/E20R/Licensing/Licensing.php
+    - inc/*
+    - languages/*
+    - tests/*

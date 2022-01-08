@@ -1,0 +1,23 @@
+{
+  "FIXME": "Update all content in <> brackets to match appropriate path/stub/info and remove this",
+  "name": "e20r-wordpress-plugin-cicd-env",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eighty20results/<plugin-path-on-github.com>.git"
+  },
+  "version": "7.3",
+  "description": "E20R WordPress Plugin CICD Env Mock",
+  "homepage": "https://wordpress.org/plugins/<plugin-path-on-wordpress.org>",
+  "bugs": {
+    "url": "https://github.com/eighty20results/<plugin-path-on-github.com>/issues",
+    "email": "thomas@eighty20results.com"
+  },
+  "license": "GPL-2.0",
+  "author": {
+    "name": "Thomas Sjolshagen",
+    "email": "thomas@sjolshagen.net",
+    "url": "https://eighty20results.com/thomas-sjolshagen"
+  },
+  "dependencies": {
+  }
+}
