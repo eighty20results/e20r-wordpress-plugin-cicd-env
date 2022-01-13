@@ -39,16 +39,14 @@ github_url="https://github.com/eighty20results/${short_name}/"
 # Plugin specific files to include/exclude and move if necessary during build
 declare -x -a include=( \
 	"docs" \
-	"inc/composer" \
-	"inc/yahnis-elsts" \
-	"inc/10quality"
-	"inc/autoload.php" \
+	"inc" \
 	"src" \
-	"class-loader.php" \
 	"composer.json" \
 	"composer.phar" \
 	"README.txt" \
-	"CHANGELOG.md"
+	"CHANGELOG.md" \
+	# FIXME: Remove this comment and replace the following file with the PHP load file for your plugin \
+	"class-loader.php" \
 	)
 # FIXME: Update the $exclude variable in build_config/helper_config to remove files/directories you won't need for your plugin package (.zip file)
 declare -x -a exclude=( \
@@ -80,7 +78,6 @@ declare -x -a excluded_for_svn=(
 		"trunk/bin" \
 		"trunk/build_env" \
 		"trunk/docker" \
-		"trunk/inc" \
 		"trunk/src/utilities/.git" \
 		"trunk/src/utilities/bin" \
 		"trunk/src/utilities/.gitignore" \
