@@ -55,6 +55,9 @@ fabric.properties
 /composer.lock
 /inc/
 /build_readmes/
+!/build_readmes/skel/CHANGELOG.md
+!/build_readmes/skel/metadata.json
+!/build_readmes/skel/README.txt
 /.phpunit.result.cache
 .DS_Store
 
