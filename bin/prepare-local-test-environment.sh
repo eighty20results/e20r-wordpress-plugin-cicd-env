@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-#
-# Copyright (c) 2016 - 2022 Thomas Sjolshagen <thomas@eighty20results.com>
-#
-# This script assumes the existence of a docker-env directory. That directory has to contain various build specific
-# configuration files. See the e20-members-list plugin repository on GitHub for an example!
-#
 DEV_ENVIRONMENT=$(ipconfig getifaddr en0) ; export DEV_ENVIRONMENT
 PROJECT_NAME='e20r-members-list' ; export PROJECT_NAME
 PLUGIN_DIR=../docker-env

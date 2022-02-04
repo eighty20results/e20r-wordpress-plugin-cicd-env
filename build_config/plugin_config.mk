@@ -1,23 +1,19 @@
-E20R_PLUGIN_NAME ?= default-plugin-name # We need to/should use a shell environment variable to set this value!
-# FIXME: Update E20R_PLUGIN_BASE_FILE to point to the source root .php file (i.e. <plugin_stub>.php)
-E20R_PLUGIN_BASE_FILE ?= e20r-wordpress-plugin-cicd-env.php
+E20R_PLUGIN_NAME ?= default-plugin-name
+E20R_PLUGIN_BASE_FILE ?= ./class-e20r-members-list.php
+E20R_DEPLOYMENT_SERVER ?= wordpress.org
 LOCAL_NETWORK_IF ?= en0
 
-ifeq ($(E20R_DEPLOYMENT_SERVER), )
-E20R_DEPLOYMENT_SERVER ?= eighty20results.com
-endif
-
-ifneq ($(LOCAL_NETWORK_IF), )
+ifneq ($(LOCAL_NETWORK_IF), "")
 LOCAL_NETWORK_STATUS ?= $(shell ifconfig $(LOCAL_NETWORK_IF) | awk '/status:/ { print $$2 }')
-$(info Setting local network interface status for $(LOCAL_NETWORK_IF): '$(LOCAL_NETWORK_STATUS)')
+$(info Setting local network interface status for $(LOCAL_NETWORK_IF): $(LOCAL_NETWORK_STATUS))
 endif
 
-ifeq ($(LOCAL_NETWORK_IF), )
-LOCAL_NETWORK_STATUS ?=
+ifeq ($(LOCAL_NETWORK_IF), "")
+LOCAL_NETWORK_STATUS ?= ""
 endif
 
 WP_DEPENDENCIES ?= paid-memberships-pro woocommerce
-E20R_DEPENDENCIES ?=
+E20R_DEPENDENCIES ?= 00-e20r-utilities
 
 DOCKER_HUB_USER ?= eighty20results
 DOCKER_ENV ?= Docker.app
@@ -36,5 +32,6 @@ WP_VERSION ?= latest
 DB_VERSION ?= latest
 WP_IMAGE_VERSION ?= 1.0
 
-PHP_CODE_PATHS := *.php src/E20R/*/*.php src/E20R/*/*/*.php
+PHP_CODE_PATHS := *.php src/*/*/*/*.php src/*/*/*/*/*.php
 PHP_IGNORE_PATHS := $(COMPOSER_DIR)/*,node_modules/*,src/utilities/*
+E20R_MAIN_BRANCH_NAME := main
