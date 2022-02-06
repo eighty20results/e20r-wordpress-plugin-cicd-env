@@ -84,10 +84,10 @@ if ( ! class_exists( 'E20R\Utilities\ActivateUtilitiesPlugin' ) ) {
 			}
 
 			if ( is_multisite() && ( $network_wide || is_network_only_plugin( $plugin ) ) ) {
-				$network_wide = true;
-				$current      = get_site_option( 'active_sitewide_plugins', array() );
+					$network_wide = true;
+					$current      = get_site_option( 'active_sitewide_plugins', array() );
 			} else {
-				$current = get_option( 'active_plugins', array() );
+					$current = get_option( 'active_plugins', array() );
 			}
 
 			if ( ! in_array( $plugin, $current, true ) ) {
@@ -118,14 +118,14 @@ if ( ! class_exists( 'E20R\Utilities\ActivateUtilitiesPlugin' ) ) {
 				do_action( 'activated_plugin', trim( $plugin ) );
 
 				if ( ob_get_length() > 0 ) {
-					$output = ob_get_clean();
-					return new WP_Error(
-						'unexpected_output',
-						__( 'The plugin generated unexpected output.' ),
-						$output
-					);
+						$output = ob_get_clean();
+						return new WP_Error(
+							'unexpected_output',
+							__( 'The plugin generated unexpected output.' ),
+							$output
+						);
 				}
-				ob_end_clean();
+					ob_end_clean();
 			}
 
 			return self::is_active( $plugin );

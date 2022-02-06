@@ -1,15 +1,14 @@
 {
-  "FIXME": "Update all content in <> brackets to match appropriate path/stub/info and remove this",
-  "name": "e20r-wordpress-plugin-cicd-env",
+  "name": "e20r-members-list",
   "repository": {
     "type": "git",
-    "url": "git://github.com/eighty20results/<plugin-path-on-github.com>.git"
+    "url": "git://github.com/eighty20results/e20r-members-list.git"
   },
-  "version": "7.3",
-  "description": "E20R WordPress Plugin CICD Env Mock",
-  "homepage": "https://wordpress.org/plugins/<plugin-path-on-wordpress.org>",
+  "version": "8.5",
+  "description": "E20R Better Members List for Paid Memberships Pro",
+  "homepage": "https://wordpress.org/plugins/e20r-members-list",
   "bugs": {
-    "url": "https://github.com/eighty20results/<plugin-path-on-github.com>/issues",
+    "url": "https://github.com/eighty20results/e20r-better-pmpro-members-list/issues",
     "email": "thomas@eighty20results.com"
   },
   "license": "GPL-2.0",

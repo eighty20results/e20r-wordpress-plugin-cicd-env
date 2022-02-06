@@ -2,10 +2,8 @@ name: Run Unit Tests and create translations when creating a PR
 
 # Run Unit Test and POT files when new PR is created
 on:
-#   push:
-#     branches:
-#       - main
   pull_request:
+    types: [opened]
     branches:
       - main
 
@@ -25,7 +23,6 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB }}
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       CONTAINER_ACCESS_TOKEN: ${{ secrets.CONTAINER_ACCESS_TOKEN }}
-
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout repository

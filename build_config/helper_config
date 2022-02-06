@@ -28,8 +28,10 @@ declare -x codeception_update_list
 declare -x search_string
 declare -x update_to_check
 
-short_description="Better Members List for Paid Memberships Pro"
-plugin_description_text="Extensible, sortable & bulk action capable members listing + export to CSV tool for Paid Memberships Pro."
+# FIXME: Update the $short_description variable in build_config/helper_config for your plugin
+short_description="Eighty/20 Results Plugin CICD Environment Module"
+# FIXME: Update the $plugin_description_text variable in build_config/helper_config for your plugin
+plugin_description_text="Dummy plugin containing CICD specific tools for Eighty/20 Results"
 remote_server="${2}"
 plugin_slug="${E20R_PLUGIN_NAME}"
 
@@ -39,11 +41,13 @@ read -r -a codeception_update_list <<< "yahnis-elsts"
 search_string="Utilities::configureUpdateServer"
 read -r -a update_to_check <<< "class-e20r-members-list.php class-utility-loader.php class-loader.php"
 
-short_name="e20r-members-list"
+# FIXME: Update the $short_name variable in build_config/helper_config to match your plugin STUB
+short_name="${E20R_PLUGIN_NAME}"
 plugin_homepage="https://${remote_server}/plugins/${short_name}/"
 version="$(./bin/get_plugin_version.sh "${1}")"
 github_url="https://github.com/eighty20results/${short_name}/"
 
+# FIXME: Update the $include variable in build_config/helper_config to include the required files/directories for your plugin package (.zip file)
 # Plugin specific files to include/exclude and move if necessary during build
 declare -x -a include=( \
 	"docs" \
@@ -54,8 +58,11 @@ declare -x -a include=( \
 	"composer.phar" \
 	"CHANGELOG.md"
 	"README.txt" \
-	"class-e20r-members-list.php" \
+	"CHANGELOG.md" \
+	# FIXME: Remove this comment and replace the following file with the PHP load file for your plugin \
+	"class-loader.php" \
 	)
+# FIXME: Update the $exclude variable in build_config/helper_config to remove files/directories you won't need for your plugin package (.zip file)
 declare -x -a exclude=( \
 	".git" \
 	"docker" \
@@ -77,6 +84,7 @@ declare -x -a exclude=( \
 	"docker.hub.key" \
 	"vendor" \
 	)
+# FIXME: Update the $excluded_for_svn variable in build_config/helper_config to remove files/directories that should not be pushed to the wordpress.org plugin SVN repository
 declare -x -a excluded_for_svn=(
 		"trunk/.idea" \
 		"trunk/.git" \
